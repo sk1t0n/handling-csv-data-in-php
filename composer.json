@@ -1,0 +1,20 @@
+{
+    "name": "sk1t0n/handling-csv-data-in-php",
+    "description": "Handling CSV data in php using the league/csv package.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sk1t0n\\HandlingCsvDataInPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anton Grabovsky",
+            "email": "agrabovsky2020@gmail.com"
+        }
+    ],
+    "require": {
+        "league/csv": "9.0"
+    }
+}
