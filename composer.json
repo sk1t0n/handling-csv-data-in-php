@@ -8,6 +8,12 @@
             "Sk1t0n\\HandlingCsvDataInPhp\\": "src/"
         }
     },
+    "autoload-dev":
+    {
+        "psr-4": {
+            "Sk1t0n\\HandlingCsvDataInPhp\\Tests": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Anton Grabovsky",
@@ -16,5 +22,8 @@
     ],
     "require": {
         "league/csv": "9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }

@@ -13,6 +13,10 @@ class CsvReader
     /** @var Reader */
     private $reader;
 
+    /**
+     * @param CsvFile $file
+     * @throws \Exception
+     */
     public function __construct(CsvFile $file)
     {
         $this->file = $file;
@@ -24,14 +28,15 @@ class CsvReader
     }
 
     /**
-     * @return void|never
+     * @throws \Exception;
+     * @return void
      */
     private function checkFileForExists()
     {
         $filename = $this->file->getFilename();
         
         if (!file_exists($filename)) {
-            die("File {$filename} not found.");
+            throw new \Exception("File {$filename} not found.");
         }
     }
 
