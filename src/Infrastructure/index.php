@@ -9,6 +9,10 @@ use Sk1t0n\HandlingCsvDataInPhp\Domain\CsvFile;
 require dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $filename = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'posts.csv';
+$dir = dirname($filename);
+if (!file_exists($dir)) {
+    mkdir($dir);
+}
 
 $header = ['Title', 'Content'];
 $data = [
