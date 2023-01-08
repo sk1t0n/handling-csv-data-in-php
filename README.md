@@ -9,3 +9,13 @@ Install the PHP dependencies:
 ```bash
 composer install
 ```
+
+## Run the program
+
+```bash
+# Linux
+php ./src/Infrastructure/index.php
+
+# Windows
+php .\src\Infrastructure\index.php
+```
