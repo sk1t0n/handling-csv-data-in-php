@@ -14,8 +14,8 @@ composer install
 
 ```bash
 # Linux
-php ./src/Infrastructure/index.php
+php ./src/index.php
 
 # Windows
-php .\src\Infrastructure\index.php
+php .\src\index.php
 ```

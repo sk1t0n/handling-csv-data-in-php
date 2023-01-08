@@ -4,7 +4,7 @@ namespace Sk1t0n\HandlingCsvDataInPhp\Application;
 
 use League\Csv\CannotInsertRecord;
 use League\Csv\Writer;
-use Sk1t0n\HandlingCsvDataInPhp\Domain\CsvFile;
+use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 
 class CsvWriter
 {
@@ -28,6 +28,7 @@ class CsvWriter
      * 
      * @param array $data
      * @param array|null $header csf file header
+     * @throws CannotInsertRecord
      * @return void
      */
     public function write(array $data, array $header = null)
@@ -39,8 +40,7 @@ class CsvWriter
             
             $this->writer->insertAll($data);
         } catch(CannotInsertRecord $e) {
-            echo 'Error', PHP_EOL;
-            var_dump($e->getRecord());
+            throw $e;
         }
     }
 }

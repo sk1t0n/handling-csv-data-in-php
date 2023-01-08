@@ -1,6 +1,6 @@
 <?php
 
-namespace Sk1t0n\HandlingCsvDataInPhp\Domain;
+namespace Sk1t0n\HandlingCsvDataInPhp\Entities;
 
 class CsvFile
 {

@@ -2,7 +2,7 @@
 
 namespace Sk1t0n\HandlingCsvDataInPhp\Application;
 
-use Sk1t0n\HandlingCsvDataInPhp\Domain\CsvFile;
+use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 use League\Csv\Reader;
 
 class CsvReader

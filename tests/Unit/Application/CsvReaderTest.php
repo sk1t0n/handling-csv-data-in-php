@@ -4,7 +4,7 @@ namespace Sk1t0n\HandlingCsvDataInPhp\Tests\Unit\Application;
 
 use PHPUnit\Framework\TestCase;
 use Sk1t0n\HandlingCsvDataInPhp\Application\CsvReader;
-use Sk1t0n\HandlingCsvDataInPhp\Domain\CsvFile;
+use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 
 class CsvReaderTest extends TestCase
 {
