@@ -1,10 +1,10 @@
 <?php
 
-namespace Sk1t0n\HandlingCsvDataInPhp\Tests\Unit\Application;
+namespace Sk1t0n\HandlingCsvDataInPhp\Tests\Unit\UseCases;
 
 use PHPUnit\Framework\TestCase;
-use Sk1t0n\HandlingCsvDataInPhp\Application\CsvWriter;
 use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
+use Sk1t0n\HandlingCsvDataInPhp\UseCases\CsvWriter;
 
 class CsvWriterTest extends TestCase
 {

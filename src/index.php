@@ -3,9 +3,9 @@
 namespace Sk1t0n\HandlingCsvDataInPhp;
 
 use League\Csv\CannotInsertRecord;
-use Sk1t0n\HandlingCsvDataInPhp\Application\CsvReader;
-use Sk1t0n\HandlingCsvDataInPhp\Application\CsvWriter;
 use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
+use Sk1t0n\HandlingCsvDataInPhp\UseCases\CsvReader;
+use Sk1t0n\HandlingCsvDataInPhp\UseCases\CsvWriter;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 

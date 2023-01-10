@@ -1,6 +1,6 @@
 <?php
 
-namespace Sk1t0n\HandlingCsvDataInPhp\Application;
+namespace Sk1t0n\HandlingCsvDataInPhp\UseCases;
 
 use League\Csv\CannotInsertRecord;
 use League\Csv\Writer;

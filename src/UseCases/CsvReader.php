@@ -1,6 +1,6 @@
 <?php
 
-namespace Sk1t0n\HandlingCsvDataInPhp\Application;
+namespace Sk1t0n\HandlingCsvDataInPhp\UseCases;
 
 use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 use League\Csv\Reader;
