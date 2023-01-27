@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  php:
+    container_name: handling-csv-data-in-php_php
+    build: .
+    volumes:
+      - './src:/var/www/app/src'
+      - './tests:/var/www/app/tests'
+    networks:
+      - network
+    depends_on:
+      - nginx
+    restart: unless-stopped
+
+  nginx:
+    container_name: handling-csv-data-in-php_nginx
+    image: nginx:alpine
+    volumes:
+      - './docker/nginx/conf.d:/etc/nginx/conf.d'
+    ports:
+      - '8080:80'
+    networks:
+      - network
+    restart: unless-stopped
+
+networks:
+  network:
+    driver: bridge

@@ -8,10 +8,9 @@
             "Sk1t0n\\HandlingCsvDataInPhp\\": "src/"
         }
     },
-    "autoload-dev":
-    {
+    "autoload-dev": {
         "psr-4": {
-            "Sk1t0n\\HandlingCsvDataInPhp\\Tests": "tests/"
+            "Sk1t0n\\HandlingCsvDataInPhp\\Tests\\": "tests/"
         }
     },
     "authors": [

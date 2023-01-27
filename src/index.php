@@ -9,6 +9,8 @@ use Sk1t0n\HandlingCsvDataInPhp\UseCases\CsvWriter;
 
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+
 $filename = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'posts.csv';
 $dir = dirname($filename);
 if (!file_exists($dir)) {
@@ -36,7 +38,9 @@ try {
     $csvFile->setMode('r');
     $reader = new CsvReader($csvFile);
     foreach ($reader->read() as $row) {
+        echo '<pre>';
         var_dump($row);
+        echo '</pre>';
     }
 } catch (\Exception $e) {
     echo $e->getMessage();
