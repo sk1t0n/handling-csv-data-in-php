@@ -1,19 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sk1t0n\HandlingCsvDataInPhp\Entities;
+
+use Sk1t0n\HandlingCsvDataInPhp\Enums\CsvFileMode;
 
 class CsvFile
 {
-    /** @var string */
-    private $filename;
-
-    /** @var string */
-    private $mode;
-
-    public function __construct(string $filename, string $mode)
-    {
-        $this->filename = $filename;
-        $this->mode = $mode;
+    public function __construct(
+        private string $filename,
+        private CsvFileMode $mode
+    ) {
     }
 
     public function getFilename(): string
@@ -26,12 +24,12 @@ class CsvFile
         $this->filename = $filename;
     }
 
-    public function getMode(): string
+    public function getMode(): CsvFileMode
     {
         return $this->mode;
     }
 
-    public function setMode(string $mode)
+    public function setMode(CsvFileMode $mode)
     {
         $this->mode = $mode;
     }

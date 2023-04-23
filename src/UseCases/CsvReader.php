@@ -1,48 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sk1t0n\HandlingCsvDataInPhp\UseCases;
 
-use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 use League\Csv\Reader;
+use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 
 class CsvReader
 {
-    /** @var CsvFile */
-    private $file;
-
-    /** @var Reader */
-    private $reader;
+    private Reader $reader;
 
     /**
-     * @param CsvFile $file
      * @throws \Exception
      */
-    public function __construct(CsvFile $file)
+    public function __construct(private CsvFile $file)
     {
-        $this->file = $file;
         $this->checkFileForExists();
         $this->reader = Reader::createFromPath(
             $this->file->getFilename(),
-            $this->file->getMode()
+            $this->file->getMode()->value
         );
-    }
-
-    /**
-     * @throws \Exception;
-     * @return void
-     */
-    private function checkFileForExists()
-    {
-        $filename = $this->file->getFilename();
-        
-        if (!file_exists($filename)) {
-            throw new \Exception("File {$filename} not found.");
-        }
     }
 
     public function read(): \Iterator
     {
         $this->reader->setHeaderOffset(0);
+
         return $this->reader->getRecords();
+    }
+
+    /**
+     * @throws \Exception;
+     */
+    private function checkFileForExists()
+    {
+        $filename = $this->file->getFilename();
+
+        if (!file_exists($filename)) {
+            throw new \Exception("File {$filename} not found.");
+        }
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sk1t0n\HandlingCsvDataInPhp\UseCases;
 
 use League\Csv\CannotInsertRecord;
@@ -8,38 +10,32 @@ use Sk1t0n\HandlingCsvDataInPhp\Entities\CsvFile;
 
 class CsvWriter
 {
-    /** @var CsvFile */
-    private $file;
+    private Writer $writer;
 
-    /** @var Writer */
-    private $writer;
-
-    public function __construct(CsvFile $file)
+    public function __construct(private CsvFile $file)
     {
-        $this->file = $file;
         $this->writer = Writer::createFromPath(
             $this->file->getFilename(),
-            $this->file->getMode()
+            $this->file->getMode()->value
         );
     }
 
     /**
      * Saves data in a csv file.
-     * 
-     * @param array $data
-     * @param array|null $header csf file header
+     *
+     * @param null|array $header csf file header
+     *
      * @throws CannotInsertRecord
-     * @return void
      */
-    public function write(array $data, array $header = null)
+    public function write(array $data, ?array $header = null)
     {
         try {
             if ($header) {
                 $this->writer->insertOne($header);
             }
-            
+
             $this->writer->insertAll($data);
-        } catch(CannotInsertRecord $e) {
+        } catch (CannotInsertRecord $e) {
             throw $e;
         }
     }

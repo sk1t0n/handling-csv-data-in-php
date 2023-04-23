@@ -5,6 +5,9 @@ services:
     container_name: handling-csv-data-in-php_php
     build: .
     volumes:
+      - './bootstrap:/var/www/app/bootstrap'
+      - './config:/var/www/app/config'
+      - './public:/var/www/app/public'
       - './src:/var/www/app/src'
       - './tests:/var/www/app/tests'
     networks:
